@@ -16,7 +16,7 @@ const getAccessToken = async (): Promise<{
 
   const params = new URLSearchParams([
     ['grant_type', 'refresh_token'],
-    ['refresh_token', SPOTIFY_REFRESH_TOKEN!]
+    ['refresh_token', SPOTIFY_REFRESH_TOKEN]
   ]);
 
   const response = await fetch(SPOTIFY_TOKEN_ENDPOINT, {
