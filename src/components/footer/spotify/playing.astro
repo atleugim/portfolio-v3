@@ -14,7 +14,7 @@ const { data } = Astro.props;
   href={data!.item.external_urls.spotify}
   class="group flex w-full flex-wrap items-center justify-center gap-2 text-center"
 >
-  <SpotifyIcon className="size-5 group-hover:scale-110" />
+  <SpotifyIcon class="size-5 group-hover:scale-110" />
   <span>
     {joinArray(data.item.artists.map((a: any) => a.name))} - {data.item.name}
   </span>

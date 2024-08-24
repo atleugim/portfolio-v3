@@ -21,11 +21,7 @@ const { data } = Astro.props;
 >
   <H3 class="flex items-center gap-2">
     <span>{data.name}</span>
-    {
-      data.under_construction && (
-        <Construction class="size-5" title="Under construction" />
-      )
-    }
+    {data.under_construction && <Construction class="size-5" />}
   </H3>
   <p>{data.description}</p>
   <div class="flex w-full justify-between space-x-4">
