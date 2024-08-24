@@ -1,0 +1,7 @@
+---
+import type { Component } from "../../types/component";
+
+const { class: className }: Component = Astro.props;
+---
+
+<div class:list={['animate-pulse rounded-md bg-gray-200 dark:bg-gray-800', className]} />

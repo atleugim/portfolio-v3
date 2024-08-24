@@ -1,0 +1,33 @@
+---
+import type { Job } from "../../types/job";
+import BriefcaseBusiness from "../common/icons/briefcase-business.astro";
+import PulseDot from "../common/pulse-dot.astro";
+
+interface Props {
+  data: Job;
+}
+
+const { data } = Astro.props;
+---
+
+<li class='ml-5'>
+  <span class='absolute -left-5 flex size-10 items-center justify-center rounded-full dark:bg-gray-950 bg-gray-50 border border-gray-200 dark:border-gray-800'>
+    <BriefcaseBusiness class='size-4 text-gray-800 dark:text-gray-200' />
+  </span>
+  <div class='ml-2 space-y-3 rounded-md border border-gray-200 dark:border-gray-800 p-4 dark:bg-gray-950 bg-gray-50'>
+    <div class='flex w-full items-start justify-between md:items-center'>
+      <div class='flex flex-1 flex-col whitespace-nowrap text-sm'>
+        <div class='flex items-center gap-2'>
+          <b>{data.company}</b> {data.current && <PulseDot />}
+        </div>
+        <span class='text-xs'>[{data.date}]</span>
+      </div>
+      <span class='text-end text-xs font-normal'>
+        {data.role}
+      </span>
+    </div>
+    <div class='text-sm font-normal'>
+      {data.description}
+    </div>
+  </div>
+</li>

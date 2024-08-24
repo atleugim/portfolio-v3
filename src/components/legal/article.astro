@@ -1,0 +1,14 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<article class='grid'>
+  {title && <b class='text-lg'>{title}</b>}
+  <div class='grid list-disc gap-2'>
+    <slot />
+  </div>
+</article>

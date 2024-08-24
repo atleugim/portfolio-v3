@@ -1,0 +1,20 @@
+---
+import Skeleton from "../common/skeleton.astro";
+---
+
+<article class='flex flex-col space-y-4 rounded-md border border-gray-200 dark:border-gray-800 dark:bg-gray-950 bg-gray-50 p-4'>
+  <Skeleton class='h-8 w-80' />
+  <Skeleton class='h-4 w-4/5' />
+  <div class='flex w-full justify-between space-x-4'>
+    <ul class='flex flex-1 space-x-2'>
+      <Skeleton class='h-5 w-14' />
+      <Skeleton class='h-5 w-14' />
+      <Skeleton class='h-5 w-14' />
+    </ul>
+
+    <ul class='flex space-x-2'>
+      <Skeleton class='size-6 rounded-full' />
+      <Skeleton class='size-6 rounded-full' />
+    </ul>
+  </div>
+</article>

@@ -1,4 +1,7 @@
 ---
+import BgPattern from '../components/common/bg-pattern.astro';
+import Footer from '../components/footer/index.astro';
+import Header from '../components/header/index.astro';
 interface Props {
 	title: string;
 }
@@ -7,44 +10,43 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script is:inline>
+      if (
+        localStorage.theme === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
 	</head>
-	<body>
-		<slot />
+	<body class='relative antialiased dark:bg-gray-950 text-gray-950 dark:text-gray-50 bg-gray-50'>
+
+		<BgPattern />
+
+		<div class='flex h-dvh w-full flex-col'>
+			<div class='relative flex w-full flex-col items-center justify-start space-y-10'>
+				<Header />
+				<div class='w-full max-w-prose space-y-10 px-5 pb-5 md:px-0'>
+					<slot />
+					<Footer />
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+  .underline {
+		text-decoration: underline;
 	}
 </style>

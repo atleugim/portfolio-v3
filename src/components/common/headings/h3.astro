@@ -1,0 +1,14 @@
+---
+import type { Component } from "../../../types/component";
+
+const { class: className }: Component = Astro.props;
+---
+
+<h3
+  class:list={[
+    'text-2xl font-bold',
+    className]
+  }
+>
+  <slot />
+</h3>
