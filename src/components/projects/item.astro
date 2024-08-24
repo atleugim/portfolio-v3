@@ -1,13 +1,13 @@
 ---
-import type { Project } from "../../types/project";
-import Chip from "../common/chip.astro";
-import H3 from "../common/headings/h3.astro";
-import Api from "../common/icons/api.astro";
-import Construction from "../common/icons/construction.astro";
-import Github from "../common/icons/github.astro";
-import Laptop from "../common/icons/laptop.astro";
-import Link from "../common/icons/link.astro";
-import Phone from "../common/icons/phone.astro";
+import type { Project } from '../../types/project';
+import Chip from '../common/chip.astro';
+import H3 from '../common/headings/h3.astro';
+import Api from '../common/icons/api.astro';
+import Construction from '../common/icons/construction.astro';
+import Github from '../common/icons/github.astro';
+import Laptop from '../common/icons/laptop.astro';
+import Link from '../common/icons/link.astro';
+import Phone from '../common/icons/phone.astro';
 
 interface Props {
   data: Project;
@@ -16,55 +16,65 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<article class='flex flex-col space-y-4 rounded-md border border-gray-200 dark:border-gray-800 dark:bg-gray-950 bg-gray-50 p-4'>
-  <H3 class='flex items-center gap-2'>
+<article
+  class="flex flex-col space-y-4 rounded-md border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-950"
+>
+  <H3 class="flex items-center gap-2">
     <span>{data.name}</span>
-    {data.under_construction && (
-      <Construction class='size-5' title='Under construction' />
-    )}
+    {
+      data.under_construction && (
+        <Construction class="size-5" title="Under construction" />
+      )
+    }
   </H3>
   <p>{data.description}</p>
-  <div class='flex w-full justify-between space-x-4'>
-    <ul class='flex flex-1 flex-wrap gap-2'>
-      {data.technologies.map((technology) => {
-        return (
-          <li>
-            <Chip>{technology.name}</Chip>
-          </li>
-        );
-      })}
+  <div class="flex w-full justify-between space-x-4">
+    <ul class="flex flex-1 flex-wrap gap-2">
+      {
+        data.technologies.map((technology) => {
+          return (
+            <li>
+              <Chip>{technology.name}</Chip>
+            </li>
+          );
+        })
+      }
     </ul>
 
-    <ul class='flex space-x-2'>
+    <ul class="flex space-x-2">
       <li>
-        {data.type === 'website' ? (
-          <Laptop class='size-5' />
-        ) : data.type === 'app' ? (
-          <Phone class='size-5' />
-        ) : (
-          <Api class='size-5' />
-        )}
-        <span class='sr-only capitalize'>{data.type}</span>
+        {
+          data.type === 'website' ? (
+            <Laptop class="size-5" />
+          ) : data.type === 'app' ? (
+            <Phone class="size-5" />
+          ) : (
+            <Api class="size-5" />
+          )
+        }
+        <span class="sr-only capitalize">{data.type}</span>
       </li>
 
-      {Boolean(data.repo) && (
-        <li>
-              <a href={data.repo!} target='_blank'>
-                <Github class='size-5' />
-                <span class='sr-only'>View project on GitHub</span>
-              </a>
-            </li>
-      )}
-      {data.repo !== data.link && (
-        <li>
-              <a href={data.link} target='_blank'>
-                <Link class='size-5' />
-                <span class='sr-only'>
-                  View project on external site
-                </span>
-              </a>
-            </li>
-      )}
+      {
+        Boolean(data.repo) && (
+          <li>
+            <a href={data.repo!} target="_blank">
+              <Github class="size-5" />
+              <span class="sr-only">View project on GitHub</span>
+            </a>
+          </li>
+        )
+      }
+      {
+        data.repo !== data.link && (
+          <li>
+            <a href={data.link} target="_blank">
+              <Link class="size-5" />
+              <span class="sr-only">View project on external site</span>
+            </a>
+          </li>
+        )
+      }
     </ul>
   </div>
 </article>

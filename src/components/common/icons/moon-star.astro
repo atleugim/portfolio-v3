@@ -1,7 +1,16 @@
 ---
-import type { Icon } from '../../../types/component';
+import type { HTMLAttributes } from 'astro/types';
 
-const { strokeWidth = 1.5, size = 20, class: className }: Icon = Astro.props;
+interface Props extends HTMLAttributes<'svg'> {
+  size?: number;
+}
+
+const {
+  'stroke-width': strokeWidth = 1.5,
+  size = 20,
+  class: className,
+  ...props
+} = Astro.props;
 ---
 
 <svg
@@ -14,9 +23,10 @@ const { strokeWidth = 1.5, size = 20, class: className }: Icon = Astro.props;
   stroke-width={strokeWidth}
   stroke-linecap="round"
   stroke-linejoin="round"
-  class:list={["lucide lucide-moon-star", className]}
+  class:list={['lucide lucide-moon-star', className]}
+  {...props}
 >
-  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"/>
-  <path d="M20 3v4"/>
-  <path d="M22 5h-4"/>
+  <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9"></path>
+  <path d="M20 3v4"></path>
+  <path d="M22 5h-4"></path>
 </svg>

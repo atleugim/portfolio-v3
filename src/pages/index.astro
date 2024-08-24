@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+
 import Contact from '../components/common/contact/index.astro';
 import H1 from '../components/common/headings/h1.astro';
 import H2 from '../components/common/headings/h2.astro';
@@ -10,60 +11,59 @@ import Layout from '../layouts/layout.astro';
 ---
 
 <Layout title="Miguel Vega - Frontend Developer">
-	<main class='flex w-full flex-col space-y-14'>
-		<section class='grid grid-cols-1 gap-10 md:grid-cols-2'>
-			<div class='flex flex-col justify-center space-y-6'>
-				<div class='flex flex-col justify-start space-y-2'>
-					<H1>Miguel Vega</H1>
-					<strong class='font-semibold'>Frontend Engineer</strong>
-				</div>
-				<div class='flex flex-col space-y-2'>
-					<p>Creating cutting-edge web and mobile experiences.</p>
-					<p>
-						With over three years in the industry, I specialize in React.js,
-						Next.js, TailwindCSS for the web, and Flutter and Dart for mobile.
-					</p>
-				</div>
-				<Contact />
-			</div>
+  <main class="flex w-full flex-col space-y-14">
+    <section class="grid grid-cols-1 gap-10 md:grid-cols-2">
+      <div class="flex flex-col justify-center space-y-6">
+        <div class="flex flex-col justify-start space-y-2">
+          <H1>Miguel Vega</H1>
+          <strong class="font-semibold">Frontend Engineer</strong>
+        </div>
+        <div class="flex flex-col space-y-2">
+          <p>Creating cutting-edge web and mobile experiences.</p>
+          <p>
+            With over three years in the industry, I specialize in React.js,
+            Next.js, TailwindCSS for the web, and Flutter and Dart for mobile.
+          </p>
+        </div>
+        <Contact />
+      </div>
 
-			<div class='grid place-content-center'>
-				<Image
-					src='/assets/images/miguel_angel.webp'
-					width={400}
-					height={400}
-					alt='Me'
-					loading='eager'
-					decoding='sync'
-				/>
-			</div>
-		</section>
+      <div class="grid place-content-center">
+        <Image
+          src="/assets/images/miguel_angel.webp"
+          width={400}
+          height={400}
+          alt="Me"
+          loading="eager"
+          decoding="sync"
+        />
+      </div>
+    </section>
 
-		<section class='space-y-6'>
-			<div class='flex flex-col justify-start space-y-2'>
-				<H2>Featured Projects</H2>
-				<strong class='font-semibold'>Explore my creations</strong>
-			</div>
-			<FeaturedProjects />
-			<div class='div flex justify-start'>
-				<a
-					href='/projects'
-					class='group flex items-center space-x-2 text-lg'
-				>
-					<span>View all projects</span>
-					<ArrowRight class='mt-0.5 group-hover:translate-x-2 duration-300 transition-transform' />
-				</a>
-			</div>
-		</section>
+    <section class="space-y-6">
+      <div class="flex flex-col justify-start space-y-2">
+        <H2>Featured Projects</H2>
+        <strong class="font-semibold">Explore my creations</strong>
+      </div>
+      <FeaturedProjects />
+      <div class="div flex justify-start">
+        <a href="/projects" class="group flex items-center space-x-2 text-lg">
+          <span>View all projects</span>
+          <ArrowRight
+            class="mt-0.5 transition-transform duration-300 group-hover:translate-x-2"
+          />
+        </a>
+      </div>
+    </section>
 
-		<section class='space-y-6'>
-			<div class='flex flex-col justify-start space-y-2'>
-				<H2>Work Journey</H2>
-				<strong class='font-semibold'>My professional path</strong>
-			</div>
-			<div class='pl-5'>
-				<Jobs />
-			</div>
-		</section>
-	</main>
+    <section class="space-y-6">
+      <div class="flex flex-col justify-start space-y-2">
+        <H2>Work Journey</H2>
+        <strong class="font-semibold">My professional path</strong>
+      </div>
+      <div class="pl-5">
+        <Jobs />
+      </div>
+    </section>
+  </main>
 </Layout>

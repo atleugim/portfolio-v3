@@ -3,11 +3,13 @@ import ThemeSwitcher from '../common/theme-switcher.astro';
 import NavLink from './link.astro';
 ---
 
-<header class='sticky top-0 z-50 flex w-full justify-center bg-transparent px-5 py-2 backdrop-blur-2xl md:px-0'>
-  <nav class='flex w-full max-w-prose items-center justify-between'>
-    <ul class='-ml-3 flex flex-1 space-x-2'>
-      <NavLink title='Home' href='/' />
-      <NavLink title='Projects' href='/projects' />
+<header
+  class="sticky top-0 z-50 flex w-full justify-center bg-transparent px-5 py-2 backdrop-blur-2xl md:px-0"
+>
+  <nav class="flex w-full max-w-prose items-center justify-between">
+    <ul class="-ml-3 flex flex-1 space-x-2">
+      <NavLink title="Home" href="/" />
+      <NavLink title="Projects" href="/projects" />
     </ul>
     <ThemeSwitcher />
   </nav>

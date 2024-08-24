@@ -1,7 +1,15 @@
 ---
-import type { Component } from "../../types/component";
+interface Props {
+  class?: string;
+}
 
-const { class: className }: Component = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<div class:list={['animate-pulse rounded-md bg-gray-200 dark:bg-gray-800', className]} />
+<div
+  class:list={[
+    'animate-pulse rounded-md bg-gray-200 dark:bg-gray-800',
+    className
+  ]}
+>
+</div>

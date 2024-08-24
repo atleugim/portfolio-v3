@@ -1,15 +1,19 @@
 ---
-import { getJobs } from "../../queries/jobs";
-import JobCardSkeleton from "./item-skeleton.astro";
-import JobCard from "./item.astro";
+import { getJobs } from '../../queries/jobs';
+import JobCardSkeleton from './item-skeleton.astro';
+import JobCard from './item.astro';
 
 const data = await getJobs();
 ---
 
-<ol class='relative flex flex-col space-y-10 border-l border-gray-200 dark:border-gray-800'>
-  {!data
-    ? [1, 2, 3].map((i) => <JobCardSkeleton key={i} />)
-    : data.map((job) => {
-        return <JobCard data={job} />;
-      })}
+<ol
+  class="relative flex flex-col space-y-10 border-l border-gray-200 dark:border-gray-800"
+>
+  {
+    !data
+      ? [1, 2, 3].map((i) => <JobCardSkeleton key={i} />)
+      : data.map((job) => {
+          return <JobCard data={job} />;
+        })
+  }
 </ol>

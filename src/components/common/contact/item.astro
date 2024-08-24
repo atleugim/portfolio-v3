@@ -10,11 +10,11 @@ const { href, label, download } = Astro.props;
 
 <a
   href={href}
-  rel='noopener noreferrer'
-  target='_blank'
-  class='hover:scale-110 transition-transform duration-300'
+  rel="noopener noreferrer"
+  target="_blank"
+  class="transition-transform duration-300 hover:scale-110"
   download={download}
 >
-  <span class='sr-only'>{label}</span>
+  <span class="sr-only">{label}</span>
   <slot />
 </a>

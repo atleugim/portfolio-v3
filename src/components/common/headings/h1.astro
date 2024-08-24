@@ -1,14 +1,9 @@
 ---
-import type { Component } from '../../../types/component';
+import type { HTMLAttributes } from 'astro/types';
 
-const { class: className }: Component = Astro.props;
+const { class: className, ...props }: HTMLAttributes<'h1'> = Astro.props;
 ---
 
-<h1
-  class:list={[
-    'text-5xl font-bold',
-    className]
-  }
->
+<h1 class:list={['text-5xl font-bold', className]} {...props}>
   <slot />
 </h1>

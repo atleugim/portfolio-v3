@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   featured: boolean;
   under_construction: boolean;
-  type: "website" | "app" | "api";
+  type: 'website' | 'app' | 'api';
   link: string;
   technologies: {
     id: string;
