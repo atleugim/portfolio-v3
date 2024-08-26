@@ -6,8 +6,8 @@ export const getProjects = async (): Promise<Project[] | undefined> => {
       'https://raw.githubusercontent.com/atleugim/public/develop/json/projects.json'
     );
     return await res.json();
-  } catch (error) {
-    console.error('Error fetching jobs:', error);
+  } catch (err) {
+    console.error('Error fetching jobs:', err);
     return undefined;
   }
 };

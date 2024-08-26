@@ -48,9 +48,19 @@ export const getNowPlaying = async (): Promise<
       }
     });
 
-    return await response.json();
-  } catch (error) {
-    console.error(error);
+    const res = await response.json();
+
+    return {
+      is_playing: res.is_playing,
+      item: {
+        artists: res.item.artists,
+        external_urls: res.item.external_urls,
+        name: res.item.name,
+        image: res.item.album.images?.[0]?.url
+      }
+    };
+  } catch (err) {
+    console.error('Error fetching now playing:', err);
     return undefined;
   }
 };

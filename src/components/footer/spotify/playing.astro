@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 import SpotifyIcon from '~/components/common/icons/spotify.astro';
 import type { SpotifyNowPlaying } from '~/types/spotify';
 import { joinArray } from '~/utils/index';
@@ -11,11 +13,25 @@ const { data } = Astro.props;
 ---
 
 <a
-  href={data!.item.external_urls.spotify}
-  class="group flex w-full flex-wrap items-center justify-center gap-2 text-center"
+  href={data.item.external_urls.spotify}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex w-full flex-wrap items-center justify-center gap-2 text-center"
 >
-  <SpotifyIcon class="size-5 group-hover:scale-110" />
+  {
+    data.item.image ? (
+      <Image
+        src={data.item.image}
+        width={50}
+        height={50}
+        alt={data.item.name}
+        class="size-5 animate-[spin_5s_linear_infinite] rounded-full border border-card"
+      />
+    ) : (
+      <SpotifyIcon class="size-5" />
+    )
+  }
   <span>
-    {joinArray(data.item.artists.map((a: any) => a.name))} - {data.item.name}
+    {joinArray(data.item.artists.map((a) => a.name))} - {data.item.name}
   </span>
 </a>

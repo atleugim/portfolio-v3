@@ -10,6 +10,7 @@ export interface Item {
   artists: Artist[];
   external_urls: ExternalUrls;
   name: string;
+  image?: string;
 }
 
 export interface SpotifyNowPlaying {
