@@ -17,13 +17,13 @@ const { data } = Astro.props;
 ---
 
 <article
-  class="flex flex-col space-y-4 rounded-md border border-gray-200 bg-gray-50 p-4 dark:border-gray-800 dark:bg-gray-950"
+  class="flex flex-col space-y-4 rounded-md border border-card bg-background p-4"
 >
   <H3 class="flex items-center gap-2">
     <span>{data.name}</span>
     {data.under_construction && <Construction class="size-5" />}
   </H3>
-  <p>{data.description}</p>
+  <p class="text-dimmed">{data.description}</p>
   <div class="flex w-full justify-between space-x-4">
     <ul class="flex flex-1 flex-wrap gap-2">
       {
