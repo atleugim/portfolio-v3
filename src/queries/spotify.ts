@@ -1,11 +1,11 @@
-import type { SpotifyNowPlaying } from '../types/spotify';
+import type { SpotifyNowPlaying } from '~/types/spotify';
 import {
   SPOTIFY_CLIENT_ID,
   SPOTIFY_CLIENT_SECRET,
   SPOTIFY_NOW_PLAYING_ENDPOINT,
   SPOTIFY_REFRESH_TOKEN,
   SPOTIFY_TOKEN_ENDPOINT
-} from '../utils/constants';
+} from '~/utils/constants';
 
 const getAccessToken = async (): Promise<{
   access_token: string;

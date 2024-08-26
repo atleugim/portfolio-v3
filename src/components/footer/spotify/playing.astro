@@ -1,7 +1,7 @@
 ---
-import type { SpotifyNowPlaying } from '../../../types/spotify';
-import { joinArray } from '../../../utils';
-import SpotifyIcon from '../../common/icons/spotify.astro';
+import SpotifyIcon from '~/components/common/icons/spotify.astro';
+import type { SpotifyNowPlaying } from '~/types/spotify';
+import { joinArray } from '~/utils/index';
 
 interface Props {
   data: SpotifyNowPlaying;

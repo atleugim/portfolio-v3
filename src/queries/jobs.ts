@@ -1,4 +1,4 @@
-import type { Job } from '../types/job';
+import type { Job } from '~/types/job';
 
 export const getJobs = async (): Promise<Job[] | undefined> => {
   try {

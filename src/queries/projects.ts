@@ -1,4 +1,4 @@
-import type { Project } from '../types/project';
+import type { Project } from '~/types/project';
 
 export const getProjects = async (): Promise<Project[] | undefined> => {
   try {
