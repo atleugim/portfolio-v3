@@ -15,24 +15,23 @@ import Sun from './icons/sun.astro';
   <span class="sr-only">Toggle theme</span>
 </button>
 
-<script>
-  if (
-    localStorage.theme === 'dark' ||
-    (!('theme' in localStorage) &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches)
-  ) {
+<script is:inline>
+  const prefersDarkMode = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  ).matches;
+  const storedTheme = localStorage.getItem('theme');
+
+  if (storedTheme === 'dark' || (!storedTheme && prefersDarkMode)) {
     document.documentElement.classList.add('dark');
+    localStorage.setItem('theme', 'dark');
   } else {
     document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
   }
 
   document.getElementById('theme-selector')?.addEventListener('click', () => {
-    if (localStorage.theme === 'dark') {
-      localStorage.theme = 'light';
-      document.documentElement.classList.remove('dark');
-    } else {
-      localStorage.theme = 'dark';
-      document.documentElement.classList.add('dark');
-    }
+    const isDark = document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', !isDark);
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
   });
 </script>
