@@ -13,25 +13,25 @@ const { data } = Astro.props;
 ---
 
 <a
-  href={data.item.external_urls.spotify}
+  href={data.external_urls.spotify}
   target="_blank"
   rel="noopener noreferrer"
   class="flex w-full flex-wrap items-center justify-center gap-2 text-center"
 >
   {
-    data.item.image ? (
+    data.image ? (
       <Image
-        src={data.item.image}
-        width={50}
-        height={50}
-        alt={data.item.name}
-        class="size-5 animate-[spin_5s_linear_infinite] rounded-full border border-card"
+        src={data.image.url}
+        alt={data.name}
+        width={20}
+        height={20}
+        class="animate-[spin_5s_linear_infinite] rounded-full border border-card"
       />
     ) : (
       <SpotifyIcon class="size-5" />
     )
   }
   <span>
-    {joinArray(data.item.artists.map((a) => a.name))} - {data.item.name}
+    {joinArray(data.artists.map((a) => a.name))} - {data.name}
   </span>
 </a>

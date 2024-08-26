@@ -7,6 +7,8 @@ import {
   SPOTIFY_TOKEN_ENDPOINT
 } from '~/utils/constants';
 
+import { getSmallestImage } from '../utils';
+
 const getAccessToken = async (): Promise<{
   access_token: string;
 }> => {
@@ -51,13 +53,10 @@ export const getNowPlaying = async (): Promise<
     const res = await response.json();
 
     return {
-      is_playing: res.is_playing,
-      item: {
-        artists: res.item.artists,
-        external_urls: res.item.external_urls,
-        name: res.item.name,
-        image: res.item.album.images?.[0]?.url
-      }
+      artists: res.item.artists,
+      external_urls: res.item.external_urls,
+      name: res.item.name,
+      image: getSmallestImage(res.item.album.images)
     };
   } catch (err) {
     console.error('Error fetching now playing:', err);

@@ -1,19 +1,20 @@
-export interface Artist {
+export interface SpotifyArtist {
   name: string;
 }
 
-export interface ExternalUrls {
+export interface SpotifyImage {
+  url: string;
+  height: number;
+  width: number;
+}
+
+export interface SpotifyExternalUrls {
   spotify: string;
 }
 
-export interface Item {
-  artists: Artist[];
-  external_urls: ExternalUrls;
-  name: string;
-  image?: string;
-}
-
 export interface SpotifyNowPlaying {
-  item: Item;
-  is_playing: boolean;
+  artists: SpotifyArtist[];
+  external_urls: SpotifyExternalUrls;
+  name: string;
+  image?: SpotifyImage;
 }
