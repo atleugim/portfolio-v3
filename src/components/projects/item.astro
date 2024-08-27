@@ -23,7 +23,13 @@ const { data } = Astro.props;
 >
   <H3 class="flex items-center gap-2">
     <span>{data.name}</span>
-    {data.under_construction && <Construction class="size-5" />}
+    {
+      data.under_construction && (
+        <Tooltip text="Under construction">
+          <Construction class="size-5 cursor-help" />
+        </Tooltip>
+      )
+    }
   </H3>
   <p class="text-dimmed">{data.description}</p>
   <div class="flex w-full justify-between space-x-4">
@@ -39,7 +45,7 @@ const { data } = Astro.props;
       }
     </ul>
 
-    <ul class="flex cursor-help space-x-2">
+    <ul class="flex space-x-2">
       <li>
         <Tooltip
           text={data.type}
@@ -47,11 +53,11 @@ const { data } = Astro.props;
         >
           {
             data.type === 'website' ? (
-              <Laptop class="size-5" />
+              <Laptop class="size-5 cursor-help" />
             ) : data.type === 'app' ? (
-              <Phone class="size-5" />
+              <Phone class="size-5 cursor-help" />
             ) : (
-              <Api class="size-5" />
+              <Api class="size-5 cursor-help" />
             )
           }
           <span class="sr-only capitalize">{data.type}</span>
