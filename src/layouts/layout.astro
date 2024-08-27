@@ -24,7 +24,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
-    <MetaTags />
+    {import.meta.env.PROD && <MetaTags />}
 
     <ViewTransitions />
   </head>

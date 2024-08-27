@@ -5,24 +5,33 @@ import FileDownload from '../icons/file-download.astro';
 import Github from '../icons/github.astro';
 import Linkedin from '../icons/linkedin.astro';
 import Mail from '../icons/mail.astro';
+import Tooltip from '../tooltip.astro';
 import ContactItem from './item.astro';
 ---
 
 <div class="flex w-full gap-4">
-  <ContactItem href={GH_URL} label="GitHub">
-    <Github />
-  </ContactItem>
-  <ContactItem href={LI_URL} label="LinkedIn">
-    <Linkedin />
-  </ContactItem>
-  <ContactItem href={EMAIL_URL} label="Email">
-    <Mail />
-  </ContactItem>
-  <ContactItem
-    href="/assets/resume.pdf"
-    label="Resume"
-    download="Miguel Vega - Resume.pdf"
-  >
-    <FileDownload />
-  </ContactItem>
+  <Tooltip text="GitHub">
+    <ContactItem href={GH_URL} label="GitHub">
+      <Github />
+    </ContactItem>
+  </Tooltip>
+  <Tooltip text="LinkedIn">
+    <ContactItem href={LI_URL} label="LinkedIn">
+      <Linkedin />
+    </ContactItem>
+  </Tooltip>
+  <Tooltip text="Email">
+    <ContactItem href={EMAIL_URL} label="Email">
+      <Mail />
+    </ContactItem>
+  </Tooltip>
+  <Tooltip text="Download CV">
+    <ContactItem
+      href="/assets/resume.pdf"
+      label="Resume"
+      download="Miguel Vega - Resume.pdf"
+    >
+      <FileDownload />
+    </ContactItem>
+  </Tooltip>
 </div>

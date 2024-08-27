@@ -20,7 +20,7 @@ const { data } = Astro.props;
   <div class="ml-2 space-y-3 rounded-md border border-card bg-background p-4">
     <div class="flex w-full items-start justify-between md:items-center">
       <div class="flex flex-1 flex-col whitespace-nowrap text-sm">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1">
           <b>{data.company}</b>
           {data.current && <PulseDot />}
         </div>

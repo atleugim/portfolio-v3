@@ -5,10 +5,11 @@ import Chip from '../common/chip.astro';
 import H3 from '../common/headings/h3.astro';
 import Api from '../common/icons/api.astro';
 import Construction from '../common/icons/construction.astro';
+import ExternalLink from '../common/icons/external-link.astro';
 import Github from '../common/icons/github.astro';
 import Laptop from '../common/icons/laptop.astro';
-import Link from '../common/icons/link.astro';
 import Phone from '../common/icons/phone.astro';
+import Tooltip from '../common/tooltip.astro';
 
 interface Props {
   data: Project;
@@ -38,37 +39,46 @@ const { data } = Astro.props;
       }
     </ul>
 
-    <ul class="flex space-x-2">
+    <ul class="flex cursor-help space-x-2">
       <li>
-        {
-          data.type === 'website' ? (
-            <Laptop class="size-5" />
-          ) : data.type === 'app' ? (
-            <Phone class="size-5" />
-          ) : (
-            <Api class="size-5" />
-          )
-        }
-        <span class="sr-only capitalize">{data.type}</span>
+        <Tooltip
+          text={data.type}
+          class={data.type === 'api' ? 'uppercase' : 'capitalize'}
+        >
+          {
+            data.type === 'website' ? (
+              <Laptop class="size-5" />
+            ) : data.type === 'app' ? (
+              <Phone class="size-5" />
+            ) : (
+              <Api class="size-5" />
+            )
+          }
+          <span class="sr-only capitalize">{data.type}</span>
+        </Tooltip>
       </li>
 
       {
         Boolean(data.repo) && (
           <li>
-            <a href={data.repo!} target="_blank">
-              <Github class="size-5" />
-              <span class="sr-only">View project on GitHub</span>
-            </a>
+            <Tooltip text="View on GitHub">
+              <a href={data.repo!} target="_blank" rel="noopener noreferrer">
+                <Github class="size-5" />
+                <span class="sr-only">View project on GitHub</span>
+              </a>
+            </Tooltip>
           </li>
         )
       }
       {
         data.repo !== data.link && (
           <li>
-            <a href={data.link} target="_blank">
-              <Link class="size-5" />
-              <span class="sr-only">View project on external site</span>
-            </a>
+            <Tooltip text="View project">
+              <a href={data.link} target="_blank" rel="noopener noreferrer">
+                <ExternalLink class="size-5" />
+                <span class="sr-only">View project on external site</span>
+              </a>
+            </Tooltip>
           </li>
         )
       }
