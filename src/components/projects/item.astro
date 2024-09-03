@@ -8,6 +8,7 @@ import Construction from '../common/icons/construction.astro';
 import ExternalLink from '../common/icons/external-link.astro';
 import Github from '../common/icons/github.astro';
 import Laptop from '../common/icons/laptop.astro';
+import Package from '../common/icons/package.astro';
 import Phone from '../common/icons/phone.astro';
 import Tooltip from '../common/tooltip.astro';
 
@@ -56,8 +57,10 @@ const { data } = Astro.props;
               <Laptop class="size-5 cursor-help" />
             ) : data.type === 'app' ? (
               <Phone class="size-5 cursor-help" />
-            ) : (
+            ) : data.type === 'api' ? (
               <Api class="size-5 cursor-help" />
+            ) : (
+              <Package class="size-5 cursor-help" />
             )
           }
           <span class="sr-only capitalize">{data.type}</span>

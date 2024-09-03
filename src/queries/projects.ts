@@ -7,7 +7,7 @@ export const getProjects = async (): Promise<Project[] | undefined> => {
     );
     return await res.json();
   } catch (err) {
-    console.error('Error fetching jobs:', err);
+    console.error('Error fetching projects:', err);
     return undefined;
   }
 };
