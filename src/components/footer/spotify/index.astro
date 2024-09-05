@@ -1,8 +1,12 @@
 ---
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
 import { getNowPlaying } from '~/queries/spotify';
 
 import NotPlaying from './not-playing.astro';
 import Playing from './playing.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const data = await getNowPlaying();
 ---
@@ -10,6 +14,6 @@ const data = await getNowPlaying();
 <div
   class="flex flex-col items-center justify-center space-y-2 font-mono text-sm font-bold"
 >
-  <span class="font-normal">Now playing:</span>
+  <span class="font-normal">{t('footer.spotify.title')}</span>
   {data ? <Playing data={data} /> : <NotPlaying />}
 </div>

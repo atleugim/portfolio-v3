@@ -1,10 +1,12 @@
 ---
+import { getLangFromUrl } from '~/i18n/utils';
 import { getJobs } from '~/queries/jobs';
 
 import JobCardSkeleton from './item-skeleton.astro';
 import JobCard from './item.astro';
 
-const data = await getJobs();
+const lang = getLangFromUrl(Astro.url);
+const data = await getJobs(lang);
 ---
 
 <ol class="relative flex flex-col space-y-10 border-l border-card">
