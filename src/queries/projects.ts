@@ -1,5 +1,5 @@
-import type { Lang } from '~/i18n/utils';
 import type { Project } from '~/types/project';
+import type { Lang } from '~/i18n/utils';
 
 export const getProjects = async (
   lang?: Lang

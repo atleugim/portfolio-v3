@@ -1,6 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 
+import Layout from '~/layouts/layout.astro';
+
+import { getI18N, getLangFromUrl } from '~/i18n/utils';
 import Contact from '~/components/common/contact/index.astro';
 import H1 from '~/components/common/headings/h1.astro';
 import H2 from '~/components/common/headings/h2.astro';
@@ -8,8 +11,6 @@ import Subtitle from '~/components/common/headings/subtitle.astro';
 import ArrowRight from '~/components/common/icons/arrow-right.astro';
 import Jobs from '~/components/jobs/index.astro';
 import FeaturedProjects from '~/components/projects/featured.astro';
-import { getI18N, getLangFromUrl } from '~/i18n/utils';
-import Layout from '~/layouts/layout.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ currentLocale: lang });

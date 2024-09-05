@@ -1,5 +1,5 @@
-import type { Lang } from '~/i18n/utils';
 import type { Job } from '~/types/job';
+import type { Lang } from '~/i18n/utils';
 
 export const getJobs = async (lang?: Lang): Promise<Job[] | undefined> => {
   try {
