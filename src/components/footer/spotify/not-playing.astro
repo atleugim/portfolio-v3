@@ -1,8 +1,14 @@
 ---
 import SpotifyIcon from '~/components/common/icons/spotify.astro';
+import { getLangFromUrl, useTranslations } from '~/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="flex w-full items-center justify-center space-x-2 text-center">
   <SpotifyIcon class="size-5" />
-  <span>Not playing</span>
+  <span>
+    {t('footer.spotify.not-playing')}
+  </span>
 </div>

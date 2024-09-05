@@ -10,19 +10,19 @@ import FeaturedProjects from '~/components/projects/featured.astro';
 import Layout from '~/layouts/layout.astro';
 ---
 
-<Layout title="Miguel Vega - Frontend Developer">
+<Layout title="Miguel Vega - Desarrollador Frontend">
   <main class="flex w-full flex-col space-y-14">
     <section class="grid grid-cols-1 gap-10 md:grid-cols-2">
       <div class="flex flex-col justify-center space-y-6">
         <div class="flex flex-col justify-start space-y-2">
           <H1>Miguel Vega</H1>
-          <strong class="font-semibold">Frontend Engineer</strong>
+          <strong class="font-semibold">Ingeniero Frontend</strong>
         </div>
         <div class="flex flex-col space-y-2 text-dimmed">
-          <p>Creating cutting-edge web and mobile experiences.</p>
+          <p>Creando experiencias web y móviles de vanguardia.</p>
           <p>
-            With over three years in the industry, I specialize in React.js,
-            Next.js, TailwindCSS for the web, and Flutter for mobile.
+            Con más de tres años en la industria, me especializo en React.js,
+            Next.js, TailwindCSS para la web, y Flutter para móviles.
           </p>
         </div>
         <Contact />
@@ -33,7 +33,7 @@ import Layout from '~/layouts/layout.astro';
           src="/assets/images/miguel_angel.webp"
           width={400}
           height={400}
-          alt="Me"
+          alt="Yo"
           loading="eager"
           decoding="sync"
         />
@@ -42,13 +42,14 @@ import Layout from '~/layouts/layout.astro';
 
     <section class="space-y-6">
       <div class="flex flex-col justify-start space-y-2">
-        <H2>Featured Projects</H2>
-        <strong class="font-semibold text-dimmed">Explore my creations</strong>
+        <H2>Proyectos Destacados</H2>
+        <strong class="font-semibold text-dimmed">Explora mis creaciones</strong
+        >
       </div>
       <FeaturedProjects />
       <div class="div flex justify-start">
         <a href="/projects" class="group flex items-center space-x-2 text-lg">
-          <span>View all projects</span>
+          <span>Ver todos los proyectos</span>
           <ArrowRight
             class="mt-0.5 transition-transform duration-300 group-hover:translate-x-2"
           />
@@ -58,8 +59,8 @@ import Layout from '~/layouts/layout.astro';
 
     <section class="space-y-6">
       <div class="flex flex-col justify-start space-y-2">
-        <H2>Work Journey</H2>
-        <strong class="font-semibold text-dimmed">My professional path</strong>
+        <H2>Trayectoria Laboral</H2>
+        <strong class="font-semibold text-dimmed">Mi camino profesional</strong>
       </div>
       <div class="pl-5">
         <Jobs />

@@ -10,5 +10,9 @@ export default defineConfig({
       enabled: true
     }
   }),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['es', 'en']
+  },
   integrations: [tailwind()]
 });
