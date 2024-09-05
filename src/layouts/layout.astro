@@ -8,16 +8,19 @@ import CursorFollower from '~/components/common/cursor-follower.astro';
 import MetaTags from '~/components/common/meta-tags.astro';
 import Footer from '~/components/footer/index.astro';
 import Header from '~/components/header/index.astro';
+import { getLangFromUrl } from '~/i18n/utils';
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -25,7 +28,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
 
-    {import.meta.env.PROD && <MetaTags />}
+    <MetaTags />
 
     <ViewTransitions />
   </head>
