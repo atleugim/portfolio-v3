@@ -13,11 +13,13 @@ const { data } = Astro.props;
 
 <li class="ml-5">
   <span
-    class="absolute -left-5 flex size-10 items-center justify-center rounded-full border border-card bg-background"
+    class="absolute -left-5 flex size-10 items-center justify-center rounded-full border border-card bg-background/20 backdrop-blur-md"
   >
     <BriefcaseBusiness class="size-4 text-foreground" />
   </span>
-  <div class="ml-2 space-y-3 rounded-md border border-card bg-background p-4">
+  <div
+    class="ml-2 space-y-3 rounded-md border border-card bg-background/20 p-4 backdrop-blur-md"
+  >
     <div class="flex w-full items-start justify-between md:items-center">
       <div class="flex flex-1 flex-col whitespace-nowrap text-sm">
         <div class="flex items-center gap-1">

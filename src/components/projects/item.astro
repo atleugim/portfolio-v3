@@ -19,8 +19,8 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<article
-  class="flex flex-col space-y-4 rounded-md border border-card bg-background p-4"
+<li
+  class="flex flex-col space-y-4 rounded-md border border-card bg-background/20 p-4 backdrop-blur-md"
 >
   <H3 class="flex items-center gap-2">
     <span>{data.name}</span>
@@ -93,4 +93,4 @@ const { data } = Astro.props;
       }
     </ul>
   </div>
-</article>
+</li>

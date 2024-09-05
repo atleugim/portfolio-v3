@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const data = await getProjects(lang);
 ---
 
-<ol class="flex flex-col space-y-4">
+<ul class="flex flex-col space-y-4">
   {
     !data
       ? [1, 2, 3, 4].map((i) => <ProjectCardSkeleton key={i} />)
@@ -17,4 +17,4 @@ const data = await getProjects(lang);
           return <ProjectCard data={project} />;
         })
   }
-</ol>
+</ul>

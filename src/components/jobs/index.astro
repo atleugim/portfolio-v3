@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const data = await getJobs(lang);
 ---
 
-<ol class="relative flex flex-col space-y-10 border-l border-card">
+<ul class="relative flex flex-col space-y-10 border-l border-card">
   {
     !data
       ? [1, 2, 3, 4].map((i) => <JobCardSkeleton key={i} />)
@@ -17,4 +17,4 @@ const data = await getJobs(lang);
           return <JobCard data={job} />;
         })
   }
-</ol>
+</ul>
