@@ -1,0 +1,9 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+const { class: className, ...props }: HTMLAttributes<'p'> = Astro.props;
+---
+
+<p class:list={['font-medium', className]} {...props}>
+  <slot />
+</p>

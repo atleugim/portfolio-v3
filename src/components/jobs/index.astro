@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const data = await getJobs(lang);
 ---
 
-<ul class="relative flex flex-col space-y-10 border-l border-card">
+<ul class="relative ml-5 flex flex-col gap-10 border-l border-card">
   {
     !data
       ? [1, 2, 3, 4].map((i) => <JobCardSkeleton key={i} />)

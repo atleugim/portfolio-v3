@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Contact from '~/components/common/contact/index.astro';
 import H1 from '~/components/common/headings/h1.astro';
 import H2 from '~/components/common/headings/h2.astro';
+import Subtitle from '~/components/common/headings/subtitle.astro';
 import ArrowRight from '~/components/common/icons/arrow-right.astro';
 import Jobs from '~/components/jobs/index.astro';
 import FeaturedProjects from '~/components/projects/featured.astro';
@@ -11,12 +12,12 @@ import Layout from '~/layouts/layout.astro';
 ---
 
 <Layout title="Miguel Vega - Frontend Developer">
-  <main class="flex w-full flex-col space-y-14">
+  <main class="flex w-full flex-col gap-14">
     <section class="grid grid-cols-1 gap-10 md:grid-cols-2">
-      <div class="flex flex-col justify-center space-y-6">
-        <div class="flex flex-col justify-start space-y-2">
+      <div class="flex flex-col justify-center gap-6">
+        <div class="flex flex-col justify-start gap-2">
           <H1>Miguel Vega</H1>
-          <strong class="font-semibold">Frontend Engineer</strong>
+          <Subtitle>Frontend Developer</Subtitle>
         </div>
         <div class="flex flex-col space-y-2 text-dimmed">
           <p>Creating cutting-edge web and mobile experiences.</p>
@@ -41,29 +42,27 @@ import Layout from '~/layouts/layout.astro';
     </section>
 
     <section class="space-y-6">
-      <div class="flex flex-col justify-start space-y-2">
+      <div class="flex flex-col justify-start gap-1">
         <H2>Featured Projects</H2>
-        <strong class="font-semibold text-dimmed">Explore my creations</strong>
+        <Subtitle class="text-dimmed">Explore my creations</Subtitle>
       </div>
       <FeaturedProjects />
       <div class="div flex justify-start">
-        <a href="/projects" class="group flex items-center space-x-2 text-lg">
-          <span>View all projects</span>
+        <a href="/projects" class="group flex items-center gap-1">
+          <Subtitle>View all projects</Subtitle>
           <ArrowRight
-            class="mt-0.5 transition-transform duration-300 group-hover:translate-x-2"
+            class="mt-px transition-transform duration-300 group-hover:translate-x-1"
           />
         </a>
       </div>
     </section>
 
     <section class="space-y-6">
-      <div class="flex flex-col justify-start space-y-2">
+      <div class="flex flex-col justify-start gap-1">
         <H2>Work Journey</H2>
-        <strong class="font-semibold text-dimmed">My professional path</strong>
+        <Subtitle class="text-dimmed">My professional path</Subtitle>
       </div>
-      <div class="pl-5">
-        <Jobs />
-      </div>
+      <Jobs />
     </section>
   </main>
 </Layout>
