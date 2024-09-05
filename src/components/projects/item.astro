@@ -1,4 +1,5 @@
 ---
+import { getLangFromUrl } from '~/i18n/utils';
 import type { Project } from '~/types/project';
 
 import Chip from '../common/chip.astro';
@@ -17,6 +18,25 @@ interface Props {
 }
 
 const { data } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+
+const projectTranslations = {
+  en: {
+    website: 'Website',
+    app: 'App',
+    api: 'API'
+  },
+  es: {
+    website: 'Sitio web',
+    app: 'Aplicación',
+    api: 'API'
+  }
+};
+
+const t = (key: keyof (typeof projectTranslations)[typeof lang]) => {
+  return projectTranslations[lang][key];
+};
 ---
 
 <li
@@ -26,7 +46,9 @@ const { data } = Astro.props;
     <span>{data.name}</span>
     {
       data.under_construction && (
-        <Tooltip text="Under construction">
+        <Tooltip
+          text={lang === 'en' ? 'Under construction' : 'En construcción'}
+        >
           <Construction class="size-5 cursor-help" />
         </Tooltip>
       )
@@ -48,10 +70,7 @@ const { data } = Astro.props;
 
     <ul class="flex space-x-2">
       <li>
-        <Tooltip
-          text={data.type}
-          class={data.type === 'api' ? 'uppercase' : 'capitalize'}
-        >
+        <Tooltip text={t(data.type)}>
           {
             data.type === 'website' ? (
               <Laptop class="size-5 cursor-help" />
