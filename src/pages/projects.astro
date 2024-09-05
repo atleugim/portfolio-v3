@@ -1,29 +1,5 @@
 ---
-import H1 from '~/components/common/headings/h1.astro';
-import Subtitle from '~/components/common/headings/subtitle.astro';
-import AllProjects from '~/components/projects/index.astro';
-import Layout from '~/layouts/layout.astro';
+import ProjectsPage from '~/components/pages/projects.astro';
 ---
 
-<Layout title="Miguel Vega - Projects">
-  <main class="flex w-full flex-col space-y-14">
-    <section class="flex w-full flex-col gap-4">
-      <div class="flex flex-col justify-start gap-2">
-        <H1>Projects</H1>
-        <Subtitle>
-          Take a look at some of the projects I&apos;ve crafted.
-        </Subtitle>
-      </div>
-      <p class="text-dimmed">
-        Each project demonstrates my frontend development skills and my
-        enthusiasm for creating sleek, user-friendly websites. Discover how I
-        merge aesthetics with functionality to deliver standout digital
-        experiences.
-      </p>
-    </section>
-
-    <section>
-      <AllProjects />
-    </section>
-  </main>
-</Layout>
+<ProjectsPage />

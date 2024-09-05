@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "title": "Miguel Vega - Desarrollador Frontend",
+    "description": "Desarrollador frontend especializado en desarrollo web y móvil, construyendo experiencias digitales personales.",
+    "category": "Portafolio de Desarrollador"
+  },
+  "home": {
+    "title": "Miguel Vega - Desarrollador Frontend",
+    "main": {
+      "title": "Miguel Vega",
+      "subtitle": "Desarrollador Frontend",
+      "description": [
+        "Creando experiencias web y móviles de vanguardia.",
+        "Con más de tres años en la industria, me especializo en React.js, Next.js, TailwindCSS para la web, y Flutter para móviles."
+      ]
+    },
+    "projects": {
+      "title": "Proyectos destacados",
+      "subtitle": "Explora mis creaciones",
+      "view_all": "Ver todos los proyectos"
+    },
+    "jobs": {
+      "title": "Experiencia laboral",
+      "subtitle": "Mi camino profesional"
+    }
+  },
+  "projects": {
+    "title": "Miguel Vega - Proyectos",
+    "main": {
+      "title": "Proyectos",
+      "subtitle": "Echa un vistazo a algunas de mis creaciones",
+      "description": "Cada proyecto demuestra mis habilidades en desarrollo frontend y mi entusiasmo por crear sitios web elegantes y fáciles de usar. Descubre cómo fusiono la estética con la funcionalidad para ofrecer experiencias digitales destacadas."
+    }
+  }
+}
