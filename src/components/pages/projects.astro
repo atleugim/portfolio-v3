@@ -1,9 +1,10 @@
 ---
+import Layout from '~/layouts/layout.astro';
+
+import { getI18N, getLangFromUrl } from '~/i18n/utils';
 import H1 from '~/components/common/headings/h1.astro';
 import Subtitle from '~/components/common/headings/subtitle.astro';
 import AllProjects from '~/components/projects/index.astro';
-import { getI18N, getLangFromUrl } from '~/i18n/utils';
-import Layout from '~/layouts/layout.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const i18n = getI18N({ currentLocale: lang });

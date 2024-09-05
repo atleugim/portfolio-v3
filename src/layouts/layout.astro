@@ -3,12 +3,12 @@ import { ViewTransitions } from 'astro:transitions';
 
 import '@fontsource-variable/inter';
 
+import { getLangFromUrl } from '~/i18n/utils';
 import BgPattern from '~/components/common/bg-pattern.astro';
 import CursorFollower from '~/components/common/cursor-follower.astro';
 import MetaTags from '~/components/common/meta-tags.astro';
 import Footer from '~/components/footer/index.astro';
 import Header from '~/components/header/index.astro';
-import { getLangFromUrl } from '~/i18n/utils';
 
 interface Props {
   title: string;
