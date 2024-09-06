@@ -1,4 +1,4 @@
-export const EMAIL_ADDRESS = 'vegaleugim@gmail.com';
+export const EMAIL_ADDRESS = 'contact@atleugim.dev';
 
 export const GH_URL = 'https://github.com/atleugim';
 export const LI_URL = 'https://linkedin.com/in/atleugim';
