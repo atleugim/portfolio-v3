@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 import Layout from '~/layouts/layout.astro';
 
@@ -60,7 +61,10 @@ const i18n = getI18N({ currentLocale: lang });
       </div>
       <FeaturedProjects />
       <div class="div flex justify-start">
-        <a href="/projects" class="group flex items-center gap-1">
+        <a
+          href={getRelativeLocaleUrl(lang, '/projects')}
+          class="group flex items-center gap-1"
+        >
           <Subtitle>
             {i18n.home.projects.view_all}
           </Subtitle>
