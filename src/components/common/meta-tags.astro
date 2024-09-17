@@ -1,6 +1,8 @@
 ---
 import { getI18N, getLangFromUrl } from '~/i18n/utils';
 
+import Vengeance from './vengeance.astro';
+
 interface Props {
   title?: string;
 }
@@ -56,3 +58,5 @@ const i18n = getI18N({ currentLocale: lang });
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
 <title>{title ?? i18n.meta.title}</title>
+
+<Vengeance />
